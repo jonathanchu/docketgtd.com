@@ -1,0 +1,451 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Docket — GTD Productivity Tools for Emacs & iOS';
+const description = 'Docket is a GTD productivity ecosystem: a batteries-included Emacs package for todos and GTD workflows, plus a companion iOS app coming soon. Capture, organize, and get things done.';
+---
+
+<Base title={title} description={description}>
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">
+        <svg viewBox="0 0 32 32" fill="none" width="28" height="28" aria-hidden="true">
+          <rect width="32" height="32" rx="6" fill="#6c63ff"/>
+          <path d="M9 16.5l4 4 10-10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Docket
+      </a>
+      <div class="nav-links">
+        <a href="#app">iOS App</a>
+        <a href="#emacs">Emacs</a>
+        <a href="https://github.com/jonathanchu/docket" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <span class="badge">GTD Productivity Ecosystem</span>
+      <h1>Get things done.<br/>For real this time.</h1>
+      <p class="hero-sub">
+        Docket is a focused GTD system built for people who think in plain text
+        and live in their tools. An open-source Emacs package today, a companion
+        iOS app coming soon.
+      </p>
+      <div class="hero-ctas">
+        <a href="#app" class="btn btn-primary">Docket App &rarr;</a>
+        <a href="https://github.com/jonathanchu/docket" class="btn btn-secondary" target="_blank" rel="noopener">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- iOS App Section -->
+  <section id="app" class="section">
+    <div class="container">
+      <div class="section-label ios-label">Docket App</div>
+      <h2>GTD in your pocket</h2>
+      <p class="section-desc">
+        A focused iOS app for capturing and processing tasks using the
+        Getting Things Done methodology. Quick capture, contextual lists,
+        weekly reviews &mdash; designed to keep you in flow, not in your phone.
+      </p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#9889;</div>
+          <h3>Quick Capture</h3>
+          <p>Capture thoughts and tasks instantly so nothing falls through the cracks. Inbox zero is the goal.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#9776;</div>
+          <h3>Context Lists</h3>
+          <p>Organize actions by context &mdash; @home, @work, @errands &mdash; so you always know what to do next.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128270;</div>
+          <h3>Weekly Review</h3>
+          <p>Built-in review workflow to keep your system current and your mind clear.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#9203;</div>
+          <h3>Next Actions</h3>
+          <p>Surface the right task at the right time. Focus on doing, not deciding.</p>
+        </div>
+      </div>
+      <div class="coming-soon-banner">
+        <p><strong>Coming soon to the App Store.</strong> Docket App is currently in development.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emacs Section -->
+  <section id="emacs" class="section section-alt">
+    <div class="container">
+      <div class="section-label emacs-label">Docket for Emacs</div>
+      <h2>GTD that lives in your editor</h2>
+      <p class="section-desc">
+        A batteries-included Emacs package for managing todos and GTD workflows.
+        Plain text, fully hackable, integrates with the tools you already use.
+        Open source and available now.
+      </p>
+      <div class="emacs-highlights">
+        <div class="highlight">
+          <h3>Plain Text, Full Control</h3>
+          <p>Your data stays in files you own. No proprietary formats, no lock-in. Grep your todos, version them with git, script them with Elisp.</p>
+        </div>
+        <div class="highlight">
+          <h3>GTD Built In</h3>
+          <p>Inbox processing, project lists, next actions, contexts, and reviews &mdash; the full GTD workflow without configuration marathons.</p>
+        </div>
+        <div class="highlight">
+          <h3>Keyboard-Driven</h3>
+          <p>Every action is a keybinding away. Capture, refile, schedule, and archive without touching the mouse.</p>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a href="https://github.com/jonathanchu/docket" class="btn btn-primary" target="_blank" rel="noopener">
+          Get Docket for Emacs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem -->
+  <section class="section">
+    <div class="container center">
+      <h2>One system, everywhere</h2>
+      <p class="section-desc">
+        Docket is building toward a unified GTD experience &mdash; the speed and
+        hackability of Emacs paired with the portability of iOS. Capture on your
+        phone, process in your editor, review anywhere.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">Docket</span>
+        <span class="footer-muted">GTD productivity tools</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/jonathanchu/docket" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:hello@docketgtd.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  /* Nav */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(13, 13, 20, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--color-text);
+  }
+
+  .logo:hover {
+    color: var(--color-text);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-links a {
+    color: var(--color-text-muted);
+  }
+
+  .nav-links a:hover {
+    color: var(--color-text);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 10rem 1.5rem 6rem;
+    text-align: center;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-subtle);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-sub {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+    color: #fff;
+  }
+
+  .btn-secondary {
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    background: transparent;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-text);
+  }
+
+  /* Sections */
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  .section-alt {
+    background: var(--color-bg-subtle);
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+
+  .ios-label {
+    color: var(--color-ios);
+  }
+
+  .emacs-label {
+    color: var(--color-emacs);
+  }
+
+  .section h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+  }
+
+  .section-desc {
+    max-width: 640px;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .center .section-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Feature Cards */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .feature-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .feature-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  /* Coming Soon */
+  .coming-soon-banner {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+  }
+
+  .coming-soon-banner p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .coming-soon-banner strong {
+    color: var(--color-ios);
+  }
+
+  /* Emacs Highlights */
+  .emacs-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .highlight h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .highlight p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .cta-row {
+    margin-top: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-logo {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .footer-muted {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-links a {
+    color: var(--color-text-muted);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-text);
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero {
+      padding: 8rem 1.5rem 4rem;
+    }
+
+    .section {
+      padding: 3.5rem 0;
+    }
+
+    .nav-links {
+      gap: 1rem;
+    }
+  }
+</style>
