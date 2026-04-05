@@ -1,5 +1,7 @@
 * docketgtd.com
 
+[[https://app.netlify.com/projects/docketgtd/deploys][https://api.netlify.com/api/v1/badges/0e64f87d-6951-4389-bb19-c78c088c1392/deploy-status]]
+
 Marketing site for [[https://github.com/jonathanchu/docket][Docket]], a GTD productivity ecosystem.
 
 - *Docket* — a batteries-included Emacs package for todos and GTD workflows (open source)
