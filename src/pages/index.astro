@@ -10,10 +10,7 @@ const description = 'Docket is a GTD productivity ecosystem: a batteries-include
   <nav>
     <div class="nav-inner">
       <a href="/" class="logo">
-        <svg viewBox="0 0 32 32" fill="none" width="28" height="28" aria-hidden="true">
-          <rect width="32" height="32" rx="6" fill="#6c63ff"/>
-          <path d="M9 16.5l4 4 10-10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <img src="/logo-mark.svg" alt="Docket" width="28" height="28" />
         Docket
       </a>
       <div class="nav-links">
@@ -27,6 +24,7 @@ const description = 'Docket is a GTD productivity ecosystem: a batteries-include
   <!-- Hero -->
   <header class="hero">
     <div class="container">
+      <img src="/logo.svg" alt="" width="96" height="96" class="hero-icon" />
       <span class="badge">GTD Productivity Ecosystem</span>
       <h1>Get things done.<br/>For real this time.</h1>
       <p class="hero-sub">
@@ -193,6 +191,11 @@ const description = 'Docket is a GTD productivity ecosystem: a batteries-include
   .hero {
     padding: 10rem 1.5rem 6rem;
     text-align: center;
+  }
+
+  .hero-icon {
+    margin: 0 auto 1.5rem;
+    border-radius: 18px;
   }
 
   .badge {
