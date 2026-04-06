@@ -83,13 +83,25 @@ const description = 'Docket is a GTD productivity ecosystem: a batteries-include
   <!-- Emacs Section -->
   <section id="emacs" class="section section-alt">
     <div class="container">
-      <div class="section-label emacs-label">Docket for Emacs</div>
-      <h2>GTD that lives in your editor</h2>
-      <p class="section-desc">
-        A batteries-included Emacs package for managing todos and GTD workflows.
-        Plain text, fully hackable, integrates with the tools you already use.
-        Open source and available now.
-      </p>
+      <div class="emacs-top">
+        <div class="emacs-text">
+          <div class="section-label emacs-label">Docket for Emacs</div>
+          <h2>GTD that lives in your editor</h2>
+          <p class="section-desc">
+            A batteries-included Emacs package for managing todos and GTD workflows.
+            Plain text, fully hackable, integrates with the tools you already use.
+            Open source and available now.
+          </p>
+          <div class="cta-row">
+            <a href="https://github.com/jonathanchu/docket" class="btn btn-primary" target="_blank" rel="noopener">
+              Get Docket for Emacs
+            </a>
+          </div>
+        </div>
+        <div class="screenshot">
+          <img src="/docket-screenshot.png" alt="Docket upcoming view in Emacs" width="800" id="emacs-screenshot" />
+        </div>
+      </div>
       <div class="emacs-highlights">
         <div class="highlight">
           <h3>Plain Text, Full Control</h3>
@@ -104,13 +116,13 @@ const description = 'Docket is a GTD productivity ecosystem: a batteries-include
           <p>Every action is a keybinding away. Capture, refile, schedule, and archive without touching the mouse.</p>
         </div>
       </div>
-      <div class="cta-row">
-        <a href="https://github.com/jonathanchu/docket" class="btn btn-primary" target="_blank" rel="noopener">
-          Get Docket for Emacs
-        </a>
-      </div>
     </div>
   </section>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox">
+    <img src="/docket-screenshot.png" alt="Docket upcoming view in Emacs" />
+  </div>
 
   <!-- Ecosystem -->
   <section class="section">
@@ -372,6 +384,63 @@ const description = 'Docket is a GTD productivity ecosystem: a batteries-include
     color: var(--color-ios);
   }
 
+  /* Emacs two-column layout */
+  .emacs-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .emacs-text .section-desc {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Screenshot */
+  .screenshot {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    cursor: zoom-in;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .screenshot:hover {
+    border-color: var(--color-emacs);
+    transform: scale(1.02);
+  }
+
+  .screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  }
+
   /* Emacs Highlights */
   .emacs-highlights {
     display: grid;
@@ -453,5 +522,28 @@ const description = 'Docket is a GTD productivity ecosystem: a batteries-include
     .nav-links {
       gap: 1rem;
     }
+
+    .emacs-top {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
+
+<script>
+  const screenshot = document.getElementById('emacs-screenshot');
+  const lightbox = document.getElementById('lightbox');
+
+  screenshot?.addEventListener('click', () => {
+    lightbox?.classList.add('active');
+  });
+
+  lightbox?.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      lightbox?.classList.remove('active');
+    }
+  });
+</script>
