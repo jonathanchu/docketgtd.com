@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import docketScreenshot from '../assets/docket-screenshot.png';
 
 const title = 'Docket — GTD Productivity Tools for Emacs & iOS';
 const description = 'Docket is a GTD productivity ecosystem: a batteries-included Emacs package for todos and GTD workflows, plus a companion iOS app coming soon. Capture, organize, and get things done.';
@@ -99,7 +101,7 @@ const description = 'Docket is a GTD productivity ecosystem: a batteries-include
           </div>
         </div>
         <div class="screenshot">
-          <img src="/docket-screenshot.png" alt="Docket upcoming view in Emacs" width="800" id="emacs-screenshot" />
+          <Image src={docketScreenshot} alt="Docket upcoming view in Emacs" width={800} id="emacs-screenshot" />
         </div>
       </div>
       <div class="emacs-highlights">
@@ -121,7 +123,7 @@ const description = 'Docket is a GTD productivity ecosystem: a batteries-include
 
   <!-- Lightbox overlay -->
   <div class="lightbox" id="lightbox">
-    <img src="/docket-screenshot.png" alt="Docket upcoming view in Emacs" />
+    <Image src={docketScreenshot} alt="Docket upcoming view in Emacs" />
   </div>
 
   <!-- Ecosystem -->
