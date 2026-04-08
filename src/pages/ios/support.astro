@@ -1,0 +1,245 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Support — Docket for iOS';
+const description = 'Get help with the Docket iOS app. FAQ, quick add syntax, and contact information.';
+---
+
+<Base title={title} description={description}>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">
+        <img src="/logo-mark.svg" alt="Docket" width="28" height="28" />
+        Docket
+      </a>
+      <div class="nav-links">
+        <a href="/#app">iOS App</a>
+        <a href="/#emacs">Emacs</a>
+        <a href="https://github.com/jonathanchu/docket" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <span class="label">Docket for iOS</span>
+      <h1>Support</h1>
+      <p class="subtitle">Need help? You're in the right place.</p>
+
+      <section class="content">
+        <h2>Get Help</h2>
+        <p>If you're having trouble with Docket, please open an issue on GitHub:</p>
+        <p><a href="https://github.com/jonathanchu/docket-app/issues" target="_blank" rel="noopener">github.com/jonathanchu/docket-app/issues</a></p>
+        <p>You can also email <a href="mailto:hello@docketgtd.com">hello@docketgtd.com</a>.</p>
+
+        <h2>How do I set up Dropbox sync?</h2>
+        <p>During onboarding, select "Dropbox" and sign in to your Dropbox account. Then choose the org file you want to sync. The default path is <code>/org/gtd.org</code>.</p>
+
+        <h2>Can I use Docket without sync?</h2>
+        <p>Yes. Choose "Local Only" during setup. Docket will use a bundled example file so you can try it out, or you can create tasks from scratch. You can connect a sync provider later in Settings.</p>
+
+        <h2>Will Docket change my org file formatting?</h2>
+        <p>No. Docket preserves every line of your org file exactly as-is. Only the specific lines affected by your edits are modified. Your Emacs setup stays untouched.</p>
+
+        <h2>What org-mode features are supported?</h2>
+        <p>Docket supports TODO states (TODO, NEXT, WAIT, SOMEDAY, DONE, CANCELLED), priorities ([#A], [#B], [#C]), tags, SCHEDULED, DEADLINE, and CLOSED timestamps. Level-1 headings are treated as projects, level-2 headings as tasks.</p>
+
+        <h2>Quick Add syntax</h2>
+        <p>Use natural language shortcuts when adding tasks:</p>
+        <div class="syntax-table">
+          <div class="syntax-row">
+            <code>#tag</code>
+            <span>Add a tag</span>
+          </div>
+          <div class="syntax-row">
+            <code>p1</code> / <code>p2</code> / <code>p3</code>
+            <span>Set priority (A, B, C)</span>
+          </div>
+          <div class="syntax-row">
+            <code>today</code> / <code>tomorrow</code> / <code>monday</code>
+            <span>Schedule a date</span>
+          </div>
+          <div class="syntax-row">
+            <code>+3d</code>
+            <span>Schedule N days from now</span>
+          </div>
+          <div class="syntax-row">
+            <code>!deadline</code>
+            <span>Make the date a deadline</span>
+          </div>
+          <div class="syntax-row">
+            <code>/Project</code>
+            <span>File under a project</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">Docket</span>
+        <span class="footer-muted">GTD productivity tools</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/jonathanchu/docket" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:hello@docketgtd.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(13, 13, 20, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--color-text);
+  }
+
+  .logo:hover { color: var(--color-text); }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-links a { color: var(--color-text-muted); }
+  .nav-links a:hover { color: var(--color-text); }
+
+  .page {
+    padding: 8rem 0 4rem;
+  }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-ios);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .content {
+    max-width: 680px;
+  }
+
+  .content h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .content p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .content code {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15rem 0.4rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+
+  .syntax-table {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .syntax-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 0.75rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+
+  .syntax-row span {
+    color: var(--color-text-muted);
+  }
+
+  footer {
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-logo { font-weight: 700; font-size: 1rem; }
+  .footer-muted { color: var(--color-text-muted); font-size: 0.85rem; }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-links a { color: var(--color-text-muted); }
+  .footer-links a:hover { color: var(--color-text); }
+</style>

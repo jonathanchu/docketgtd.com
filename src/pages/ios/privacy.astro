@@ -1,0 +1,204 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Privacy Policy — Docket for iOS';
+const description = 'Privacy policy for the Docket iOS app. No data collection, no tracking, no analytics.';
+---
+
+<Base title={title} description={description}>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">
+        <img src="/logo-mark.svg" alt="Docket" width="28" height="28" />
+        Docket
+      </a>
+      <div class="nav-links">
+        <a href="/#app">iOS App</a>
+        <a href="/#emacs">Emacs</a>
+        <a href="https://github.com/jonathanchu/docket" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <span class="label">Docket for iOS</span>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: April 7, 2026</p>
+
+      <section class="content">
+        <h2>Overview</h2>
+        <p>Docket is an offline-first task manager that reads and writes org-mode files. Your data stays on your device unless you explicitly choose to sync it.</p>
+
+        <h2>Data Collection</h2>
+        <p>Docket does not collect, store, or transmit any personal data. There is no analytics, no tracking, and no telemetry.</p>
+
+        <h2>Data Storage</h2>
+        <p>Your task data is stored locally on your device as org-mode text files. Docket does not use any external servers or databases.</p>
+
+        <h2>Sync Services</h2>
+        <p>If you choose to enable sync, your org files are transferred directly between your device and your own Dropbox or iCloud account. Docket does not have access to your Dropbox or iCloud credentials beyond the OAuth token required for sync. No data passes through any intermediary server.</p>
+
+        <h2>Third-Party Services</h2>
+        <ul>
+          <li><strong>Dropbox</strong> (optional): If you connect Dropbox, Docket accesses only the specific org file you select. Dropbox's own privacy policy applies to data stored in your Dropbox account.</li>
+          <li><strong>iCloud</strong> (optional): If you use iCloud sync, files are stored in your iCloud Drive. Apple's privacy policy applies.</li>
+        </ul>
+
+        <h2>Children's Privacy</h2>
+        <p>Docket does not knowingly collect any information from children under 13.</p>
+
+        <h2>Changes</h2>
+        <p>If this policy changes, the updated version will be posted here with a new date.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about this policy? Email <a href="mailto:hello@docketgtd.com">hello@docketgtd.com</a> or open an issue on <a href="https://github.com/jonathanchu/docket-app" target="_blank" rel="noopener">GitHub</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">Docket</span>
+        <span class="footer-muted">GTD productivity tools</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/jonathanchu/docket" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:hello@docketgtd.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(13, 13, 20, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--color-text);
+  }
+
+  .logo:hover { color: var(--color-text); }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-links a { color: var(--color-text-muted); }
+  .nav-links a:hover { color: var(--color-text); }
+
+  .page {
+    padding: 8rem 0 4rem;
+  }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-ios);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .updated {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .content {
+    max-width: 680px;
+  }
+
+  .content h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .content p, .content li {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .content ul {
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .content li {
+    margin-bottom: 0.5rem;
+  }
+
+  footer {
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-logo { font-weight: 700; font-size: 1rem; }
+  .footer-muted { color: var(--color-text-muted); font-size: 0.85rem; }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-links a { color: var(--color-text-muted); }
+  .footer-links a:hover { color: var(--color-text); }
+</style>
